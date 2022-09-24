@@ -1,0 +1,31 @@
+---
+import type { MarkdownLayoutProps } from 'astro';
+type Props = MarkdownLayoutProps<{
+	title: string;
+	author: string;
+	date: string;
+}>;
+const { frontmatter } = Astro.props;
+const response = await fetch('https://randomuser.me/api/');
+const data = await response.json();
+
+console.log('data: ', data.results[0].gender);
+---
+
+<html>
+	<head>
+		<title>{frontmatter.title}</title>
+	</head>
+	<body>
+		<h1>{frontmatter.title} by {frontmatter.author}</h1>
+		<h2>Hello</h2>
+		<slot />
+		<p>Written on: {frontmatter.date}</p>
+	</body>
+</html>
+
+<style>
+	p {
+		color: red;
+	}
+</style>
