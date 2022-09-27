@@ -1,1 +1,37 @@
-<h1>Hello from <pre style="display: inline;">/blog</pre></h1>
+---
+import '../../style/global.css';
+import FaroukHeaderImage from '../../components/FaroukHeaderImage.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Farouk's blog</title>
+	</head>
+	<body>
+		<main class="h-full w-full">
+			<div class="absolute right-0 z-10 p-5 font-bold text-xl text-right">
+				<a class="text-slate-800" href="https://github.com/Faroukhamadi"
+					>Github</a
+				>
+				<br />
+				<a class="text-slate-800" href="https://twitter.com/FaroukHamadii"
+					>Twitter</a
+				>
+				<br />
+				<a rel="prefetch" class="text-slate-800" href="/links">More</a>
+			</div>
+			<div class="text-slate-800 flex flex-col text-center items-center">
+				<div class="w-48 mt-6"><FaroukHeaderImage /></div>
+				<h1 class="text-4xl font-bold pt-2">Farouk's Blog</h1>
+				<h4 class="text-xl px-8">
+					A blog about Programming, Computer Science, Design Patterns and all
+					kinds of hot things going on with tech :)
+				</h4>
+			</div>
+		</main>
+	</body>
+</html>
