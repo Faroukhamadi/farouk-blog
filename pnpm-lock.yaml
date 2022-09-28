@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@astrojs/netlify': ^1.0.4
   '@astrojs/prefetch': ^0.0.7
   '@astrojs/tailwind': ^2.0.1
   '@tailwindcss/typography': ^0.5.7
@@ -9,6 +10,7 @@ specifiers:
   tailwindcss: ^3.0.24
 
 dependencies:
+  '@astrojs/netlify': 1.0.4
   '@astrojs/prefetch': 0.0.7
   '@astrojs/tailwind': 2.0.1_tailwindcss@3.1.8
   astro: 1.2.7
@@ -94,6 +96,13 @@ packages:
       micromark-util-types: 1.0.2
       uvu: 0.5.6
       vfile-message: 3.1.2
+    dev: false
+
+  /@astrojs/netlify/1.0.4:
+    resolution: {integrity: sha512-1gwcXuPG3wuuQ8ZQ9pFB0XhKsdUeL4vTCii477b88hSe399uQPqrlgAk8vFw4VQ6tSlb3deIlRYfyOvZlaSMdA==}
+    dependencies:
+      '@astrojs/webapi': 1.0.0
+      esbuild: 0.14.54
     dev: false
 
   /@astrojs/prefetch/0.0.7:
