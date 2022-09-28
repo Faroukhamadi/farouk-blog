@@ -12,5 +12,9 @@
     @apply py-2 text-indigo-600 hover:underline focus:ring outline-none ring-indigo-600 rounded-lg;
   }
 
+  button {
+    /* outline-none removes the default outline when you use tabs */
+    @apply focus:ring outline-none ring-indigo-600 rounded-lg focus:border-none ;
+  }
     
 }

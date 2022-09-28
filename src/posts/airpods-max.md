@@ -2,6 +2,8 @@
 title: 'AirPods Max Review'
 date: '2020-12-22'
 description: 'An Audiophile who happens to love Apple comes to terms with this terrible product'
+introduction: '
+Ill admit that I went in hopeful. The AirPods Pro more than impressed me. Theyre my "every day headphone", which hurts to say as an audiophile, but also speaks to their quality.'
 imageURL: 'https://t3.gg/images/airpods-max/miles.jpg'
 readMore: true
 ---

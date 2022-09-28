@@ -8,8 +8,6 @@ export async function getStaticPaths() {
 
 	const paths = allPosts.map((post) => {
 		const slug = getSlugFromPath(post.file);
-		console.log(slug);
-
 		return {
 			params: {
 				slug,

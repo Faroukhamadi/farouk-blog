@@ -5,12 +5,14 @@ specifiers:
   '@astrojs/tailwind': ^2.0.1
   '@tailwindcss/typography': ^0.5.7
   astro: ^1.2.7
+  date-fns: ^2.29.3
   tailwindcss: ^3.0.24
 
 dependencies:
   '@astrojs/prefetch': 0.0.7
   '@astrojs/tailwind': 2.0.1_tailwindcss@3.1.8
   astro: 1.2.7
+  date-fns: 2.29.3
   tailwindcss: 3.1.8
 
 devDependencies:
@@ -1019,6 +1021,11 @@ packages:
   /data-uri-to-buffer/4.0.0:
     resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
     engines: {node: '>= 12'}
+    dev: false
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
     dev: false
 
   /debug/4.3.4:

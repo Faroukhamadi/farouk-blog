@@ -1,6 +1,16 @@
 ---
 import '../../style/global.css';
 import FaroukHeaderImage from '../../components/FaroukHeaderImage.astro';
+import PostPreview from '../../components/PostPreview.astro';
+
+// const posts = await Astro.glob('../../posts/*.md');
+const posts = await Astro.glob('../*.md');
+const sortedPosts = posts.sort((a, b) => {
+	return (
+		new Date(b.frontmatter.date).valueOf() -
+		new Date(a.frontmatter.date).valueOf()
+	);
+});
 ---
 
 <!DOCTYPE html>
@@ -27,10 +37,13 @@ import FaroukHeaderImage from '../../components/FaroukHeaderImage.astro';
 			<div class="text-slate-800 flex flex-col text-center items-center">
 				<div class="w-48 mt-6"><FaroukHeaderImage /></div>
 				<h1 class="text-4xl font-bold pt-2">Farouk's Blog</h1>
-				<h4 class="text-xl px-8">
+				<h4 class="text-xl xl:text-2xl px-8">
 					A blog about Programming, Computer Science, Design Patterns and all
 					kinds of hot things going on with tech :)
 				</h4>
+			</div>
+			<div>
+				{sortedPosts.map((p) => <PostPreview post={p} />)}
 			</div>
 		</main>
 	</body>

@@ -1,0 +1,49 @@
+---
+import type { MarkdownInstance } from 'astro';
+import { format, parseISO } from 'date-fns';
+
+interface Props {
+	post: MarkdownInstance<Record<string, any>>;
+}
+
+const { post } = Astro.props;
+const prefix = '/blog/posts';
+---
+
+<div class="mt-10 mx-10">
+	<a
+		rel="prefetch"
+		class="text-2xl font-bold text-slate-800 md:text-3xl xl:text-4xl"
+		href={prefix + post.url}
+	>
+		{post.frontmatter.title}
+	</a>
+	<p class="text-md text-slate-800 m-2 md:text-xl xl:text-2xl">
+		{post.frontmatter.introduction}
+	</p>
+
+	<div class="flex justify-between mt-4">
+		<p class="text-base inline font-light text-slate-800">
+			{format(parseISO(post.frontmatter.date), 'LLL d, yyyy')}
+		</p>
+
+		<a
+			href={prefix + post.url}
+			class="border border-solid p-2 hover:no-underline cursor-pointer rounded-md text-slate-800 hover:bg-gray-300 border-slate-600"
+		>
+			Continue Reading
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 8 8"
+				class="inline fill-slate-800"
+			>
+				<path
+					d="M4 0c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm-1 2l3 2-3 2v-4z"
+				></path>
+			</svg>
+		</a>
+	</div>
+	<pre>{prefix + post.url}</pre>
+</div>
