@@ -3,7 +3,6 @@ import '../../style/global.css';
 import FaroukHeaderImage from '../../components/FaroukHeaderImage.astro';
 import PostPreview from '../../components/PostPreview.astro';
 
-// const posts = await Astro.glob('../../posts/*.md');
 const posts = await Astro.glob('../*.md');
 const sortedPosts = posts.sort((a, b) => {
 	return (
