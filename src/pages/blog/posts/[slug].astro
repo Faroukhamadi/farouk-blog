@@ -4,7 +4,9 @@ import '../../../style/global.css';
 import getSlugFromPath from '../../../utils/getSlugFromPath';
 
 export async function getStaticPaths() {
-	const allPosts = await Astro.glob('../../*.md');
+	// const allPosts = await Astro.glob('../../*.md');
+	const allPosts = await Astro.glob('../../*.md')
+	
 
 	const paths = allPosts.map((post) => {
 		const slug = getSlugFromPath(post.file);
@@ -37,6 +39,6 @@ const { post } = Astro.props;
 		<title>Document</title>
 	</head>
 	<body>
-		<div class="prose prose-lg lg:prose-xl"><post.Content /></div>
+		<div class="prose prose-lg lg:prose-xl"><post.Content/></div>
 	</body>
 </html>

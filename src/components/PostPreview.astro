@@ -10,7 +10,7 @@ const { post } = Astro.props;
 const prefix = '/blog/posts';
 ---
 
-<div class="mt-10 mx-10">
+<div class="mt-10 mx-10 md:mx-20 xl:mx-32">
 	<a
 		rel="prefetch"
 		class="text-2xl font-bold text-slate-800 md:text-3xl xl:text-4xl"
@@ -18,7 +18,7 @@ const prefix = '/blog/posts';
 	>
 		{post.frontmatter.title}
 	</a>
-	<p class="text-md text-slate-800 m-2 md:text-xl xl:text-2xl">
+	<p class="text-md text-slate-800 m-2 md:text-xl xl:text-2xl ">
 		{post.frontmatter.introduction}
 	</p>
 
@@ -45,5 +45,4 @@ const prefix = '/blog/posts';
 			</svg>
 		</a>
 	</div>
-	<pre>{prefix + post.url}</pre>
 </div>
