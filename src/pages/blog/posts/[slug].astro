@@ -1,21 +1,33 @@
 ---
+import type { MarkdownInstance } from 'astro';
 import '../../../style/global.css';
+import getSlugFromPath from '../../../utils/getSlugFromPath';
 
-export async function getStaticPaths({}) {
+export async function getStaticPaths() {
 	const allPosts = await Astro.glob('../../../posts/*.md');
 
-	return [
-		{ params: { slug: '1' } },
-		{ params: { slug: '2' } },
-		{ params: { slug: '3' } },
-	];
-	// const paths = [
-	// 	{ params: { slug: '1' } },
-	// 	{ params: { slug: '2' } },
-	// 	{ params: { slug: '3' } },
-	// ];
-	// return { paths, fallback: false };
+	const paths = allPosts.map((post) => {
+		const slug = getSlugFromPath(post.file);
+		console.log(slug);
+
+		return {
+			params: {
+				slug,
+			},
+			props: {
+				post,
+			},
+		};
+	});
+
+	return paths;
 }
+
+interface Props {
+	post: MarkdownInstance<Record<string, any>>;
+}
+
+const { post } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -26,5 +38,7 @@ export async function getStaticPaths({}) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 	</head>
-	<body><h1>Hello</h1></body>
+	<body>
+		<div class="prose prose-lg lg:prose-xl"><post.Content /></div>
+	</body>
 </html>
