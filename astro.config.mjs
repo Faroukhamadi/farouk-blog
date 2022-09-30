@@ -9,6 +9,6 @@ export default defineConfig({
 	integrations: [tailwind(), prefetch()],
 
 	// reset when you deploy to production
-	// output: "server",
-	// adapter: netlify()
+	output: 'server',
+	adapter: netlify(),
 });
