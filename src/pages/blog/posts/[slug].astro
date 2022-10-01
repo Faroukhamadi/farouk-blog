@@ -2,7 +2,7 @@
 import '../../../style/global.css';
 import type { MarkdownInstance } from 'astro';
 import getSlugFromPath from '../../../utils/getSlugFromPath';
-import formatDate from '../../../utils/formatDate';
+import PostHeader from '../../../components/PostHeader.astro';
 
 export async function getStaticPaths() {
 	const allPosts = await Astro.glob('../../*.md');
@@ -35,16 +35,17 @@ const { post } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>{post.frontmatter.title}</title>
 	</head>
 	<body>
 		<div class="flex justify-center w-full h-full">
 			<article
 				class="prose prose-lg text-black lg:prose-xl xl:prose-2xl mx-4 pb-10 xl:max-w-none xl:w-[70rem]"
 			>
-				<p class="mt-4 lg:mt-5 xl:mt-6 font-medium text-xl">Farouk's Blog</p>
-				<h1 class="m-0 lg:m-0 xl:m-0">{post.frontmatter.title}</h1>
-				<p class="m-0 lg:my-2 xl:my-2">{formatDate(post.frontmatter.date)}</p>
+				<PostHeader
+					title={post.frontmatter.title}
+					date={post.frontmatter.date}
+				/>
 				<post.Content />
 			</article>
 		</div>

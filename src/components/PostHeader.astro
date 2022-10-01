@@ -1,0 +1,14 @@
+---
+import formatDate from '../utils/formatDate';
+
+interface Props {
+	title: string;
+	date: string;
+}
+
+const { date, title } = Astro.props;
+---
+
+<p class="mt-4 lg:mt-5 xl:mt-6 font-medium text-xl">Farouk's Blog</p>
+<h1 class="m-0 lg:m-0 xl:m-0">{title}</h1>
+<p class="m-0 lg:my-2 xl:my-2">{formatDate(date)}</p>
