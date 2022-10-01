@@ -1,12 +1,11 @@
 ---
-import type { MarkdownInstance } from 'astro';
 import '../../../style/global.css';
+import type { MarkdownInstance } from 'astro';
 import getSlugFromPath from '../../../utils/getSlugFromPath';
+import formatDate from '../../../utils/formatDate';
 
 export async function getStaticPaths() {
-	// const allPosts = await Astro.glob('../../*.md');
-	const allPosts = await Astro.glob('../../*.md')
-	
+	const allPosts = await Astro.glob('../../*.md');
 
 	const paths = allPosts.map((post) => {
 		const slug = getSlugFromPath(post.file);
@@ -39,6 +38,20 @@ const { post } = Astro.props;
 		<title>Document</title>
 	</head>
 	<body>
-		<div class="prose prose-lg lg:prose-xl"><post.Content/></div>
+		<div class="flex justify-center w-full h-full">
+			<article
+				class="prose prose-lg text-black lg:prose-xl xl:prose-2xl mx-4 pb-10 xl:max-w-none xl:w-[70rem]"
+			>
+				<p class="mt-4 lg:mt-5 xl:mt-6 font-medium text-xl">Farouk's Blog</p>
+				<h1 class="m-0">{post.frontmatter.title}</h1>
+				<p class="m-0">{formatDate(post.frontmatter.date)}</p>
+				<post.Content />
+			</article>
+		</div>
+		<div
+			class="font-bold text-base md:text-lg xl:text-xl absolute left-0 p-5 z-10"
+		>
+			<a href="/blog"> &#8592 Back to Farouk's blog</a>
+		</div>
 	</body>
 </html>
