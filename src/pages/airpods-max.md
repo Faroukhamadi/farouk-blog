@@ -11,3 +11,12 @@ This is the content of the blog post about saying hello to the world. I just wan
 ## Another Hello World
 
 And this one is bigger because it has two hashtags instead of one and that's how markdown works. I am just typing random words to fill up the space, very interesting and this will probably make it to the final version of the website because I am too lazy to change it. I am just typing random words to fill up the space, very interesting and this will probably make it to the final version of the website because I am too lazy to change it. I am just typing random words to fill up the space, very interesting and this will probably make it to the final version of the website because I am too lazy to change it.
+
+_Code snippet of Hello World_
+
+```js
+// say hello world 10 times in the console
+for (let i = 0; i < 10; i++) {
+	console.log('Hello World');
+}
+```
