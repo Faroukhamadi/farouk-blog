@@ -16,5 +16,5 @@
     /* outline-none removes the default outline when you use tabs */
     @apply focus:ring outline-none ring-indigo-600 rounded-lg focus:border-none ;
   }
-    
+
 }

@@ -14,6 +14,8 @@ And this one is bigger because it has two hashtags instead of one and that's how
 
 _Code snippet of Hello World_
 
+> "But doesn't Next.js already work with TypeScript?"
+
 ```js
 // say hello world 10 times in the console
 for (let i = 0; i < 10; i++) {
